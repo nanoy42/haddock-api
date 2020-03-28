@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <title>⚓ Capitaine Haddock API ⚓</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+</head>
+
+<body>
+  <span class="title">⚓</span>
+  <h1>Capitaine Haddock API</h1>
+  <h2>Je suis le capitaine Haddock et je suis le capitaine de ce navire</h2>
+  <img src="https://images.nanoy.fr/haddock.png" width="10%" />
+  <h2 id="msg"></h2>
+  <button onclick="vocabulary()">Vocabulaire</button> <button onclick="insult()">Insultes</button>
+  <br>
+  <br>
+  Accès à l'api : /api/vocabulaire et /api/insultes
+  <br>
+  <br>
+  Made with ♥ by Nanoy : <a href="https://github.com/nanoy42/haddock-api/">Github</a>
+
+
+</body>
+<style>
+  body {
+    background-color: #000080;
+    color: white;
+    text-align: center;
+    font: 'Open sans', sans-serif;
+  }
+
+  a {
+    color: white;
+  }
+</style>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script>
+  function vocabulary() {
+    $.get("/api/vocabulaire", function (data) {
+      $("#msg").html(data["msg"]);
+    }, "json");
+  };
+  function insults() {
+    $.get("/api/insulte", function (data) {
+      $("#msg").html(data["msg"]);
+    }, "json");
+  };
+
+  $(document).ready(function () {
+    vocabulary();
+  });
+</script>
+
+</html>
