@@ -14,7 +14,7 @@
   <h2>Je suis le capitaine Haddock et je suis le capitaine de ce navire</h2>
   <img src="https://images.nanoy.fr/haddock.png" width="10%" />
   <h2 id="msg"></h2>
-  <button onclick="vocabulary()">Vocabulaire</button> <button onclick="insult()">Insultes</button>
+  <button onclick="vocabulary()">Vocabulaire</button> <button onclick="insults()">Insultes</button>
   <br>
   <br>
   Accès à l'api : /api/vocabulaire et /api/insultes
@@ -45,7 +45,7 @@
     }, "json");
   };
   function insults() {
-    $.get("/api/insulte", function (data) {
+    $.get("/api/insultes", function (data) {
       $("#msg").html(data["msg"]);
     }, "json");
   };
