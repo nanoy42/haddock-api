@@ -165,3 +165,4 @@ dmypy.json
 # Pyre type checker
 
 # End of https://www.gitignore.io/api/code,flask,python
+venv
