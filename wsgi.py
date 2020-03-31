@@ -7,7 +7,7 @@ logging.basicConfig(stream=sys.stderr)
 sys.path.insert(0, "/var/www/haddock-api/")
 sys.path.insert(0, "/var/www/haddock-api/haddock_api")
 
-VIRTUALENV_LOC = '/var/www/haddock-api/haddock_api/venv'
+VIRTUALENV_LOC = os.environ['VIRTUAL_ENV']
 
 # Activation de l'environnement virtuel
 activate_env=os.path.join(VIRTUALENV_LOC, 'bin/activate_this.py')

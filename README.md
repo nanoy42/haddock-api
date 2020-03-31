@@ -10,7 +10,12 @@ Clone the repository and install the dependencies :
 
 ```
 git clone https://github.com/nanoy42/haddock-api
-pip3 install -r requirements.txt
+pipenv install --ignore-pipfile
+```
+
+If you want the dev dependencies
+```
+pipenv install --dev --pre
 ```
 
 Then configure the wsgi file and apache with mod_wsgi
