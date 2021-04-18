@@ -1,5 +1,6 @@
 from flask import Flask, jsonify, render_template
 import random
+import datetime
 
 from haddock import *
 
@@ -19,6 +20,13 @@ def vocabulary():
 @app.route("/api/insultes")
 def insult():
     return jsonify({"msg": random.choice(INSULTS)})
+
+@app.route("/api/whataweek")
+def api_whataweek():
+    weekday = datetime.datetime.today().weekday()
+    if weekday <= 4:
+        return jsonify({"img": f"https://images.nanoy.fr/whataweek/{weekday}.jpg", "msg": "ok"})
+    return jsonify({"img": "", "msg": "weekend"})
 
 
 if __name__ == "__main__":
